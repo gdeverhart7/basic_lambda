@@ -5,10 +5,10 @@ def lambda_handler(event, context):
     string = "hi there guys"
     encoded_string = string.encode("utf-8")
 
-    bucket_name = "hnny-data-analytics-sandbox"
+    bucket_name = "s3-sandbox"
     file_name = "hello.txt"
     lambda_path = "/tmp/" + file_name
-    s3_path = "y13844_aws/" + file_name
+    s3_path = "folder/" + file_name
 
     s3 = boto3.resource("s3")
     s3.Bucket(bucket_name).put_object(Key=s3_path, Body=encoded_string)
